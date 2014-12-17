@@ -6,17 +6,23 @@
 </body>
 
 <template name="ieTest">
-    {{#unless loading}}
-        <div>
-            <a href="#">
-                <span>goes to slash</span>
-            </a>
+    <div class="container">
+        <div class="row" style="margin-top: 20px;">
+            {{#unless loading}}
+                <div class="list-group">
+                    <a href="#" class="list-group-item"><span>goes to root</span></a>
+                </div>
+            {{else}}
+                loading..
+            {{/unless}}
+            <hr>
+            <div class="list-group">
+                <a href="#" class="list-group-item"><span>does not go to root</span></a>
+            </div>
         </div>
-    {{else}}
-        loading..
-    {{/unless}}
+    </div>
 </template>
 
 <template name="homepage">
-    my first home page
+    <a href="{{pathFor 'ieTest'}}">Go to test page</a>
 </template>
